@@ -23,6 +23,6 @@ This project contains the implementation code for the baseline methods of the PV
 ## Additional Information
 - We provide a pre-trained model `NVgaze_model.pth` and sample raw data for your convenience.
 - Our code was developed in a Windows environment. Before using it, please make sure to update your file path settings in `config.py`.
-- Our lab is exploring suitable open-source platforms and developing reasonable open-source protocols to publish the raw images of the PVeye dataset. We plan to open-source the full dataset of raw data in the near future.
+- Due to the large size of our dataset, our lab is exploring suitable open-source platforms and developing reasonable open-source protocols to publish the raw images of the PVeye dataset. We plan to open-source the full dataset of raw data in the near future. Meanwhile, here is a Baidu Pan link to the complete data for two subjects: [Link](https://pan.baidu.com/s/1f4h7WhRjnf6gry6-vOFX8g?pwd=nvrj).
 
 Thank you for your interest and support in our project! We look forward to your contributions and feedback.
