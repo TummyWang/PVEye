@@ -1,5 +1,3 @@
-
-
 # PVeye Dataset Baseline Method Source Code
 
 This project contains the implementation code for the baseline methods of the PVeye dataset, suitable for model training and evaluation. Below is a detailed description of each script file:
@@ -28,4 +26,3 @@ This project contains the implementation code for the baseline methods of the PV
 - Our lab is exploring suitable open-source platforms and developing reasonable open-source protocols to publish the raw images of the PVeye dataset. We plan to open-source the full dataset of raw data in the near future.
 
 Thank you for your interest and support in our project! We look forward to your contributions and feedback.
-
