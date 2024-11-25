@@ -2,7 +2,7 @@ class Config:
     train_dir = r'D:\PVeye\train'
     test_dir = r'D:\PVeye\test_side'
     batch_size = 512
-    test_batch_size = 512
+    test_batch_size = 3150
     epochs = 200
     gpu_id=0
     learning_rate = 0.0001
