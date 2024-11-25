@@ -13,6 +13,18 @@ from PIL import Image
 import numpy as np
 import random
 
+def select_samples_with_unique_labels(labels, num_samples):
+    labels_rounded = torch.round(labels * 1e5) / 1e5 
+    unique_labels, inverse_indices = torch.unique(labels_rounded, dim=0, return_inverse=True)
+    unique_label_indices = {}
+    for idx, label_idx in enumerate(inverse_indices):
+        label_idx = label_idx.item()
+        if label_idx not in unique_label_indices:
+            unique_label_indices[label_idx] = idx
+    selected_indices = list(unique_label_indices.values())
+
+    return selected_indices
+
 class PointAngleLoss:
     def __init__(self):
         self.z = torch.tensor(3.1, device='cuda:0')
@@ -86,9 +98,9 @@ def test(model, dataset, criterion, angle_loss_evaluator):
                 outputs = model(inputs)
 
                 # Select 9 random samples to calculate W
-                random_indices = torch.randperm(inputs.size(0))[:9]
-                X_sample = outputs[random_indices]
-                labels_sample = labels[random_indices]
+                selected_indices = select_samples_with_unique_labels(labels, 9)
+                X_sample = outputs[selected_indices]
+                labels_sample = labels[selected_indices]
                 X_sample = torch.cat([X_sample, torch.ones(X_sample.size(0), 1).to('cuda:0')], dim=1)
 
                 # Calculate W using selected samples
